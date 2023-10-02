@@ -68,6 +68,7 @@ public class JobTest {
                 new CoreCompetency("Persistence"));
 
         String productTesterString = ProductTester.toString();
+        System.out.println(productTesterString);
 
 
 
