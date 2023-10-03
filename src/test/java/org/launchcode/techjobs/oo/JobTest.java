@@ -4,14 +4,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class JobTest {
-    //TODO: Create your unit tests here
 
     //Test the Empty Constructor
     @Test
     public void testSettingJobId(){
         Job WebDeveloper = new Job();
         Job JavaDeveloper = new Job();
-        assertNotEquals(WebDeveloper,JavaDeveloper);
+        assertNotEquals(WebDeveloper, JavaDeveloper);
     }
 
     //Test the Full Constructor
@@ -29,11 +28,11 @@ public class JobTest {
         assertTrue(ProductTester.getCoreCompetency() instanceof CoreCompetency);
 
         //assertEquals to test value of each field
-        assertEquals("Product tester",ProductTester.getName());
-        assertEquals("ACME",ProductTester.getEmployer().getValue());
-        assertEquals("Desert",ProductTester.getLocation().getValue());
-        assertEquals("Quality control",ProductTester.getPositionType().getValue());
-        assertEquals("Persistence",ProductTester.getCoreCompetency().getValue());
+        assertEquals("Product tester", ProductTester.getName());
+        assertEquals("ACME", ProductTester.getEmployer().getValue());
+        assertEquals("Desert", ProductTester.getLocation().getValue());
+        assertEquals("Quality control", ProductTester.getPositionType().getValue());
+        assertEquals("Persistence", ProductTester.getCoreCompetency().getValue());
 
     }
 
@@ -47,7 +46,7 @@ public class JobTest {
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
-        assertNotEquals(ProductTester,ProductTester2);
+        assertNotEquals(ProductTester, ProductTester2);
     }
 
     @Test
@@ -57,8 +56,8 @@ public class JobTest {
         boolean startsWithNewLine = ProductTester.toString().startsWith(newline);
         boolean endsWithNewLine = ProductTester.toString().endsWith(newline);
 
-        assertEquals(true,startsWithNewLine);
-        assertEquals(true,endsWithNewLine);
+        assertEquals(true, startsWithNewLine);
+        assertEquals(true, endsWithNewLine);
     }
 
     @Test
@@ -68,16 +67,14 @@ public class JobTest {
                 new CoreCompetency("Persistence"));
 
         String productTesterString = ProductTester.toString();
-        System.out.println(productTesterString);
+        String newline = System.lineSeparator();
 
-
-
-        assertTrue(productTesterString.contains("ID: " + ProductTester.getId()));
-        assertTrue(productTesterString.contains("Name: "+ ProductTester.getName()));
-        assertTrue(productTesterString.contains("Employer: "+ProductTester.getEmployer()));
-        assertTrue(productTesterString.contains("Location: "+ProductTester.getLocation()));
-        assertTrue(productTesterString.contains("Position Type: "+ ProductTester.getPositionType()));
-        assertTrue(productTesterString.contains("Core Competency: "+ProductTester.getCoreCompetency()));
+        assertTrue(productTesterString.contains("ID: " + ProductTester.getId() + newline));
+        assertTrue(productTesterString.contains("Name: " + ProductTester.getName() + newline));
+        assertTrue(productTesterString.contains("Employer: " + ProductTester.getEmployer() + newline));
+        assertTrue(productTesterString.contains("Location: " + ProductTester.getLocation() + newline));
+        assertTrue(productTesterString.contains("Position Type: " + ProductTester.getPositionType() + newline));
+        assertTrue(productTesterString.contains("Core Competency: " + ProductTester.getCoreCompetency() + newline));
     }
 
     @Test
@@ -90,10 +87,10 @@ public class JobTest {
         String dataNotAvailable = "Data not available";
 
         assertTrue(productTesterString.contains("ID: " + ProductTester.getId()));
-        assertTrue(productTesterString.contains("Name: "+ dataNotAvailable));
-        assertTrue(productTesterString.contains("Employer: "+dataNotAvailable));
-        assertTrue(productTesterString.contains("Location: "+dataNotAvailable));
-        assertTrue(productTesterString.contains("Position Type: "+dataNotAvailable));
-        assertTrue(productTesterString.contains("Core Competency: "+dataNotAvailable));
+        assertTrue(productTesterString.contains("Name: " + dataNotAvailable));
+        assertTrue(productTesterString.contains("Employer: " + dataNotAvailable));
+        assertTrue(productTesterString.contains("Location: " + dataNotAvailable));
+        assertTrue(productTesterString.contains("Position Type: " + dataNotAvailable));
+        assertTrue(productTesterString.contains("Core Competency: " + dataNotAvailable));
     }
 }

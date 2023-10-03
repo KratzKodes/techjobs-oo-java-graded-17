@@ -31,18 +31,17 @@ public class Job {
     @Override
     public String toString() {
 
-
         String dataNotAvailable = "Data not available";
         String newline = System.lineSeparator();
 
-        if(this.getEmployer()==null){
-            return newline +
-                    "ID: "+this.getId()+newline+
-                    "Name: " +dataNotAvailable+
-                    "Employer: "+dataNotAvailable+
-                    "Location: "+dataNotAvailable+
-                    "Position Type: "+dataNotAvailable+
-                    "Core Competency: "+dataNotAvailable+
+        if(this.getEmployer()== null){
+            return  newline +
+                    "ID: "+ this.getId()+ newline +
+                    "Name: " + dataNotAvailable +
+                    "Employer: "+ dataNotAvailable +
+                    "Location: "+ dataNotAvailable +
+                    "Position Type: "+ dataNotAvailable +
+                    "Core Competency: "+ dataNotAvailable +
                     newline;
         }
 
@@ -52,21 +51,19 @@ public class Job {
         String position = this.getPositionType().getValue();
         String competency = this.getCoreCompetency().getValue();
 
-
-
         String jobName = name.isBlank() ? dataNotAvailable : name;
         String jobEmployer = employer.isBlank() ? dataNotAvailable : employer;
         String jobLocation = location.isBlank() ? dataNotAvailable : location;
         String jobPositionType = position.isBlank() ? dataNotAvailable : position;
         String jobCoreCompetency = competency.isBlank()? dataNotAvailable : competency;
 
-        return newline +
-                "ID: "+this.getId()+newline+
-                "Name: " +jobName+newline+
-                "Employer: "+jobEmployer+newline+
-                "Location: "+jobLocation+newline+
-                "Position Type: "+jobPositionType+newline+
-                "Core Competency: "+jobCoreCompetency+
+        return  newline +
+                "ID: " + this.getId() + newline +
+                "Name: " + jobName + newline+
+                "Employer: " + jobEmployer + newline +
+                "Location: " + jobLocation + newline +
+                "Position Type: " + jobPositionType + newline +
+                "Core Competency: " + jobCoreCompetency +
                 newline;
     }
 
